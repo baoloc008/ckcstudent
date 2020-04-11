@@ -14,7 +14,10 @@ class CKCStudentApp extends StatelessWidget {
     );
     return MaterialApp(
       title: "CKC STUDENTS",
-      theme: ThemeData(primaryColor: Colors.blue),
+      theme: ThemeData(
+        primaryColor: Colors.blue,
+        fontFamily: 'SFCompactDisplay-Regular'
+      ),
       home: HomePage(),
     );
   }

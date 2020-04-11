@@ -10,15 +10,12 @@ class LeftAppBar extends StatelessWidget {
         children: <Widget>[
           Text(
             "CKC STUDENTS",
-            style: TextStyle(
-              fontSize: 20,
-            ),
+            style: TextStyle(fontSize: 20, fontFamily: "SFCompactDisplay-Bold"),
           ),
           Text(
             "Phòng CTCT - HSSV",
-            style: TextStyle(
-              fontSize: 16,
-            ),
+            style:
+                TextStyle(fontSize: 16, fontFamily: 'SFCompactDisplay-Medium'),
           )
         ],
       ),
@@ -36,15 +33,12 @@ class RightAppBar extends StatelessWidget {
         children: <Widget>[
           Text(
             "Tuần 25",
-            style: TextStyle(
-              fontSize: 24,
-            ),
+            style: TextStyle(fontSize: 24, fontFamily: 'SFCompactDisplay-Bold'),
           ),
           Text(
             "Năm học: 2019 - 2020",
-            style: TextStyle(
-              fontSize: 9,
-            ),
+            style:
+                TextStyle(fontSize: 9, fontFamily: 'SFCompactDisplay-Regular'),
           ),
         ],
       ),
@@ -79,7 +73,7 @@ class TopBanner extends StatelessWidget {
               style: TextStyle(
                 fontSize: 16,
                 color: Colors.white,
-                fontWeight: FontWeight.bold,
+                fontFamily: 'SFCompactDisplay-Semibold',
               ),
             ),
             SizedBox(height: 14),
@@ -89,7 +83,7 @@ class TopBanner extends StatelessWidget {
                 Container(
                   width: 100,
                   height: 100,
-                  child: Image.asset("images/iconNotification.png"),
+                  child: Image.asset("assets/iconNotification.png"),
                 ),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -106,7 +100,11 @@ class TopBanner extends StatelessWidget {
                         ),
                         Text(
                           "Bổ sung hồ sơ HSSV",
-                          style: TextStyle(color: Colors.white, fontSize: 10),
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 10,
+                            fontFamily: 'SFCompactDisplay-Semibold',
+                          ),
                         ),
                       ],
                     ),
@@ -123,7 +121,11 @@ class TopBanner extends StatelessWidget {
                         ),
                         Text(
                           "Nhận xét giảng viên",
-                          style: TextStyle(color: Colors.white, fontSize: 10),
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 10,
+                            fontFamily: 'SFCompactDisplay-Semibold',
+                          ),
                         ),
                       ],
                     ),
@@ -140,7 +142,11 @@ class TopBanner extends StatelessWidget {
                         ),
                         Text(
                           "Miễn giảm kinh phí ",
-                          style: TextStyle(color: Colors.white, fontSize: 10),
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 10,
+                            fontFamily: 'SFCompactDisplay-Semibold',
+                          ),
                         ),
                       ],
                     ),
@@ -157,7 +163,11 @@ class TopBanner extends StatelessWidget {
                         ),
                         Text(
                           "Các thông báo khác",
-                          style: TextStyle(color: Colors.white, fontSize: 10),
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 10,
+                            fontFamily: 'SFCompactDisplay-Semibold',
+                          ),
                         ),
                       ],
                     ),
