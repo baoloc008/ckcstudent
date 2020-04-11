@@ -54,12 +54,14 @@ class CategoryList extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 167.0, // 167 = 135 + 16 * 2
-      margin: EdgeInsets.only(top: 19),
+      margin: EdgeInsets.only(
+        top: 8, // 19 - blurRadius - offset.y
+      ),
       child: ListView.separated(
         padding: EdgeInsets.only(
-          left: 20, // equal separator.width
+          left: 30,
           top: 11, // equal equal blurRadius - offset.y
-          right: 20, // equal separator.width
+          right: 30,
           bottom: 21, // equal blurRadius + offset.y
         ),
         itemCount: 10,

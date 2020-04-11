@@ -1,3 +1,4 @@
+import 'package:ckcstudent/pages/widgets/image_carousel.dart';
 import 'package:ckcstudent/pages/widgets/category_header.dart';
 import 'package:ckcstudent/pages/widgets/category_list.dart';
 import 'package:ckcstudent/pages/widgets/top_banner.dart';
@@ -8,11 +9,12 @@ class HomePageBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Column(
+      child: ListView(
         children: <Widget>[
           TopBanner(),
           CategoryHeader(),
           CategoryList(),
+          ImageCarousel(),
         ],
       ),
     );
@@ -25,6 +27,7 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         titleSpacing: 30,
+        centerTitle: false,
         title: Text(
           'CKC STUDENTS',
           style: TextStyle(
