@@ -1,6 +1,7 @@
+import 'package:ckcstudent/pages/widgets/category_header.dart';
+import 'package:ckcstudent/pages/widgets/category_list.dart';
 import 'package:ckcstudent/pages/widgets/top_banner.dart';
 import 'package:flutter/material.dart';
-import 'package:ckcstudent/pages/widgets/left_appbar.dart';
 import 'package:ckcstudent/pages/widgets/right_appbar.dart';
 
 class HomePageBody extends StatelessWidget {
@@ -10,6 +11,8 @@ class HomePageBody extends StatelessWidget {
       child: Column(
         children: <Widget>[
           TopBanner(),
+          CategoryHeader(),
+          CategoryList(),
         ],
       ),
     );
@@ -21,21 +24,20 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        flexibleSpace: FlexibleSpaceBar(
-          centerTitle: false,
-          titlePadding: EdgeInsetsDirectional.fromSTEB(30, 0, 30, 10),
-          title: Container(
-            child: Container(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  LeftAppBar(), // left content
-                  RightAppBar(), // right content
-                ],
-              ),
-            ),
+        titleSpacing: 30,
+        title: Text(
+          'CKC STUDENTS',
+          style: TextStyle(
+            fontSize: 20,
+            fontFamily: 'SFCompactDisplay-Bold',
           ),
         ),
+        actions: <Widget>[
+          Container(
+            padding: EdgeInsets.only(right: 30, bottom: 10),
+            child: RightAppBar(),
+          )
+        ],
       ),
       body: HomePageBody(),
     );

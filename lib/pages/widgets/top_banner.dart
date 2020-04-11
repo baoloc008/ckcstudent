@@ -63,10 +63,10 @@ class TopBanner extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
-                Container(
-                  width: 100,
-                  height: 100,
-                  child: Image.asset('assets/iconNotification.png'),
+                Icon(
+                  Icons.notifications,
+                  color: Colors.white,
+                  size: 100,
                 ),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
