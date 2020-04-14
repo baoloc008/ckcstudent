@@ -23,9 +23,7 @@ class CategoryItem extends StatelessWidget {
             color: Theme.of(context).primaryColor,
             size: 50,
           ),
-          SizedBox(
-            height: 15,
-          ),
+          SizedBox(height: 15),
           Text(
             'Nội dung sinh hoạt chủ nhiệm',
             textAlign: TextAlign.center,

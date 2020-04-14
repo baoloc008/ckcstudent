@@ -22,9 +22,7 @@ class CategoryList extends StatelessWidget {
           return CategoryItem();
         },
         separatorBuilder: (context, index) {
-          return SizedBox(
-            width: 20,
-          );
+          return SizedBox(width: 20);
         },
       ),
     );

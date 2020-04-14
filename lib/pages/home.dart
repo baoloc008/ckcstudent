@@ -5,22 +5,6 @@ import 'package:ckcstudent/pages/widgets/top_banner/top_banner.dart';
 import 'package:flutter/material.dart';
 import 'package:ckcstudent/pages/widgets/right_appbar.dart';
 
-class HomePageBody extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      child: ListView(
-        children: <Widget>[
-          TopBanner(),
-          CategoryHeader(),
-          CategoryList(),
-          ImageCarousel(),
-        ],
-      ),
-    );
-  }
-}
-
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -42,7 +26,14 @@ class HomePage extends StatelessWidget {
           )
         ],
       ),
-      body: HomePageBody(),
+      body: ListView(
+        children: <Widget>[
+          TopBanner(),
+          CategoryHeader(),
+          CategoryList(),
+          ImageCarousel(),
+        ],
+      ),
     );
   }
 }

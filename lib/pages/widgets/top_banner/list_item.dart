@@ -13,9 +13,7 @@ class TopBannerListItem extends StatelessWidget {
           size: 12,
           color: Colors.white,
         ),
-        SizedBox(
-          width: 7,
-        ),
+        SizedBox(width: 7),
         Text(
           text,
           style: TextStyle(

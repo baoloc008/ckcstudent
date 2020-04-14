@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'top_banner_list_item.dart';
+import 'list_item.dart';
 
 class ReminderList extends StatelessWidget {
   @override
