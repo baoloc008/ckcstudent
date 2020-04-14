@@ -1,7 +1,7 @@
 import 'package:ckcstudent/pages/widgets/image_carousel.dart';
 import 'package:ckcstudent/pages/widgets/category_header.dart';
-import 'package:ckcstudent/pages/widgets/category_list.dart';
-import 'package:ckcstudent/pages/widgets/top_banner.dart';
+import 'package:ckcstudent/pages/widgets/category_list/category_list.dart';
+import 'package:ckcstudent/pages/widgets/top_banner/top_banner.dart';
 import 'package:flutter/material.dart';
 import 'package:ckcstudent/pages/widgets/right_appbar.dart';
 
