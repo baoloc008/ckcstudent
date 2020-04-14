@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:ckcstudent/models/app_config.dart';
 import 'package:ckcstudent/models/category.dart';
 import 'package:ckcstudent/pages/widgets/image_carousel.dart';
 import 'package:ckcstudent/pages/widgets/category_header.dart';
@@ -15,12 +16,12 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  Future<List<Category>> future;
+  Future<AppConfig> future;
 
   @override
   void initState() {
     super.initState();
-    fetchCategory().then((response) {
+    getAppConfig().then((response) {
       print(json.encode(response));
     });
   }

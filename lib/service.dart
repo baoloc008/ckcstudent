@@ -1,13 +1,13 @@
 import 'dart:async';
 
+import 'package:ckcstudent/models/app_config.dart';
 import 'package:http/http.dart' as http;
 
-import 'models/category.dart';
 
 String url =
-    'https://gist.githubusercontent.com/baoloc008/cafb8bba1457079952bcb25e766fbfdd/raw/69b7265525054033879feb9520ac49c193df6d9c/ckc-student.json';
+    'https://gist.githubusercontent.com/baoloc008/e49941470782511ea155fbe4f9dd78bc/raw/307fa0edba489303ba46c04a089adc7c7cc81258/appconfig.json';
 
-Future<List<Category>> fetchCategory() async {
+Future<AppConfig> getAppConfig() async {
   final response = await http.get(url);
-  return categoryFromJson(response.body);
+  return appConfigFromJson(response.body);
 }
