@@ -1,4 +1,5 @@
 import 'package:ckcstudent/pages/home.dart';
+import 'package:ckcstudent/themes/color.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -15,7 +16,7 @@ class CKCStudentApp extends StatelessWidget {
     return MaterialApp(
       title: "CKC STUDENTS",
       theme: ThemeData(
-        primaryColor: Color.fromARGB(255, 47, 128, 237),
+        primarySwatch: MaterialColor(0xFF2F80ED, swatch),
         fontFamily: 'SFCompactDisplay-Regular',
       ),
       home: HomePage(),
