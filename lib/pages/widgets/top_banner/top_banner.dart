@@ -39,10 +39,12 @@ class TopBanner extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
-                Icon(
-                  Icons.notifications,
-                  color: Colors.white,
-                  size: 100,
+                Expanded(
+                  child: Icon(
+                    Icons.notifications,
+                    color: Colors.white,
+                    size: 100,
+                  ),
                 ),
                 ReminderList(),
               ],
