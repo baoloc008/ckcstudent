@@ -1,4 +1,5 @@
 import 'package:ckcstudent/pages/home.dart';
+import 'package:ckcstudent/pages/student_guide.dart';
 import 'package:ckcstudent/themes/color.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -19,7 +20,7 @@ class CKCStudentApp extends StatelessWidget {
         primarySwatch: MaterialColor(0xFF2F80ED, swatch),
         fontFamily: 'SFCompactDisplay-Regular',
       ),
-      home: HomePage(),
+      home: StudentGuidePage(),
     );
   }
 }
