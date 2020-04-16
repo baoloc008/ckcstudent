@@ -5,10 +5,10 @@ class StudentGuideList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GridView.count(
-      padding: EdgeInsets.all(35),
+      padding: EdgeInsets.all(30),
       crossAxisCount: 2,
-      mainAxisSpacing: 35,
-      crossAxisSpacing: 35,
+      mainAxisSpacing: 20,
+      crossAxisSpacing: 20,
       children: List.generate(30, (index) {
         return StudentGuideItem();
       }),

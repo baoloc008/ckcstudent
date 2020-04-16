@@ -23,7 +23,7 @@ class StudentGuideItem extends StatelessWidget {
               ),
               SizedBox(height: 15),
               Text(
-                'Đăng ký GXN, thẻ sinh viên',
+                'Đóng học phí qua MOMO',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   color: Colors.black,
