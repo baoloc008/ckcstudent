@@ -1,7 +1,6 @@
 import 'dart:convert';
 import 'package:ckcstudent/models/app_config.dart';
 import 'package:ckcstudent/pages/widgets/image_carousel.dart';
-import 'package:ckcstudent/pages/widgets/category_header.dart';
 import 'package:ckcstudent/pages/widgets/category_list/category_list.dart';
 import 'package:ckcstudent/pages/widgets/top_banner/top_banner.dart';
 import 'package:ckcstudent/service.dart';
@@ -47,7 +46,10 @@ class _HomePageState extends State<HomePage> {
       body: ListView(
         children: <Widget>[
           TopBanner(),
-          CategoryHeader(),
+          SizedBox(
+            height: 10,
+          ),
+          // CategoryHeader(),
           CategoryList(),
           ImageCarousel(),
         ],
