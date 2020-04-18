@@ -1,6 +1,6 @@
-import 'package:ckcstudent/pages/home.dart';
-import 'package:ckcstudent/pages/setting.dart';
-import 'package:ckcstudent/pages/student_guide.dart';
+import 'package:ckcstudent/home_page/home.dart';
+import 'package:ckcstudent/setting_page/setting.dart';
+import 'package:ckcstudent/guide_page/guide.dart';
 import 'package:flutter/material.dart';
 
 class BottomNavigator extends StatefulWidget {
@@ -23,7 +23,7 @@ class _BottomNavigatorState extends State<BottomNavigator> {
     super.initState();
     originalList = [
       HomePage(),
-      StudentGuidePage(),
+      GuidePage(),
       SettingPage(),
     ];
     originalDic = {0: true, 1: false, 2: false};

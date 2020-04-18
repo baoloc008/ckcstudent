@@ -1,4 +1,4 @@
-import 'package:ckcstudent/pages/widgets/general/box_shadow.dart';
+import 'package:ckcstudent/widgets/general/box_shadow.dart';
 import 'package:flutter/material.dart';
 
 class CategoryItem extends StatelessWidget {

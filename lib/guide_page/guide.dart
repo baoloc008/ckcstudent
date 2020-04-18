@@ -1,7 +1,7 @@
-import 'package:ckcstudent/pages/widgets/student_guide_list/student_guide_list.dart';
+import 'package:ckcstudent/guide_page/widgets/guide_list/guide_list.dart';
 import 'package:flutter/material.dart';
 
-class StudentGuidePage extends StatelessWidget {
+class GuidePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -17,7 +17,7 @@ class StudentGuidePage extends StatelessWidget {
           ),
         ),
         body: Container(
-          child: StudentGuideList(),
+          child: GuideList(),
         ),
       ),
     );

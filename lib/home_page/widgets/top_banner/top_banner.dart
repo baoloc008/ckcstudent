@@ -1,5 +1,6 @@
-import 'package:ckcstudent/pages/widgets/general/box_shadow.dart';
+import 'package:ckcstudent/widgets/general/box_shadow.dart';
 import 'package:flutter/material.dart';
+
 import 'reminder_list.dart';
 
 class TopBanner extends StatelessWidget {
