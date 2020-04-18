@@ -1,10 +1,12 @@
+import 'package:ckcstudent/models/app_config.dart';
 import 'package:ckcstudent/widgets/general/box_shadow.dart';
 import 'package:flutter/material.dart';
 
 class CategoryItem extends StatelessWidget {
-  // String text;
-  // String imageSrc;
-  // CategoryItem({this.text, this.imageSrc});
+  final CategoryModel categoryModel;
+
+   CategoryItem({this.categoryModel});
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -25,7 +27,7 @@ class CategoryItem extends StatelessWidget {
           ),
           SizedBox(height: 15),
           Text(
-            'Nội dung sinh hoạt chủ nhiệm',
+            categoryModel.text,
             textAlign: TextAlign.center,
             style: TextStyle(
               color: Colors.black,

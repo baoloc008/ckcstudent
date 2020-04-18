@@ -1,32 +1,31 @@
 {
-  "currenttimestamp": 1586877562680,
-  "categorylist": [
+  "category_list": [
     {
       "id": "10",
-      "weburl": "http://www.caothang.edu.vn/",
-      "itemicon": "https://png.pngtree.com/svg/20170330/cbeb034c9e.png",
-      "itemtext": "CKC 10"
+      "url": "http://www.caothang.edu.vn/",
+      "icon": "https://png.pngtree.com/svg/20170330/cbeb034c9e.png",
+      "text": "CKC 10"
     },
     {
       "id": "2",
-      "weburl": "https://www.youtube.com/",
-      "itemicon": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Flat_tick_icon.svg/1200px-Flat_tick_icon.svg.png",
-      "itemtext": "CKC 2"
+      "url": "https://www.youtube.com/",
+      "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Flat_tick_icon.svg/1200px-Flat_tick_icon.svg.png",
+      "text": "CKC 2"
     },
     {
       "id": "3",
-      "weburl": "https://www.google.com/",
-      "itemicon": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Flat_tick_icon.svg/1200px-Flat_tick_icon.svg.png",
-      "itemtext": "CKC 3"
+      "url": "https://www.google.com/",
+      "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Flat_tick_icon.svg/1200px-Flat_tick_icon.svg.png",
+      "text": "CKC 3"
     },
     {
       "id": "4",
-      "weburl": "https://www.facebook.com/",
-      "itemicon": "https://png.pngtree.com/svg/20170720/d11172979e.png",
-      "itemtext": "CKC 4"
+      "url": "https://www.facebook.com/",
+      "icon": "https://png.pngtree.com/svg/20170720/d11172979e.png",
+      "text": "CKC 4"
     }
   ],
-  "imagelist": [
+  "homepage_image_list": [
     "https://picsum.photos/900/500",
     "https://picsum.photos/900/500",
     "https://picsum.photos/900/500",

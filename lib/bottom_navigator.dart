@@ -1,6 +1,6 @@
+import 'package:ckcstudent/guide_page/guide.dart';
 import 'package:ckcstudent/home_page/home.dart';
 import 'package:ckcstudent/setting_page/setting.dart';
-import 'package:ckcstudent/guide_page/guide.dart';
 import 'package:flutter/material.dart';
 
 class BottomNavigator extends StatefulWidget {

@@ -1,58 +1,78 @@
 import 'dart:convert';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 AppConfig appConfigFromJson(String str) => AppConfig.fromJson(json.decode(str));
 
 String appConfigToJson(AppConfig data) => json.encode(data.toJson());
 
 class AppConfig {
-  int currenttimestamp;
-  List<Categorylist> categorylist;
-  List<String> imagelist;
+  List<CategoryModel> categoryList;
+  List<String> homepageImageList;
 
   AppConfig({
-    this.currenttimestamp,
-    this.categorylist,
-    this.imagelist,
+    this.categoryList,
+    this.homepageImageList,
   });
 
+  factory AppConfig.fromMap(Map<String, dynamic> map, String reference) {
+    return AppConfig(
+      categoryList: List<CategoryModel>.from(
+          map['category_list'].map((x) => CategoryModel.fromMap(x))),
+      homepageImageList:
+          List<String>.from(map['homepage_image_list'].map((x) => x)),
+    );
+  }
+
+  factory AppConfig.fromSnapshot(DocumentSnapshot snapshot) {
+    return AppConfig.fromMap(snapshot.data, snapshot.documentID);
+  }
+
   factory AppConfig.fromJson(Map<String, dynamic> json) => AppConfig(
-        currenttimestamp: json["currenttimestamp"],
-        categorylist: List<Categorylist>.from(
-            json["categorylist"].map((x) => Categorylist.fromJson(x))),
-        imagelist: List<String>.from(json["imagelist"].map((x) => x)),
+        categoryList: List<CategoryModel>.from(
+            json["category_list"].map((x) => CategoryModel.fromJson(x))),
+        homepageImageList:
+            List<String>.from(json["homepage_image_list"].map((x) => x)),
       );
 
   Map<String, dynamic> toJson() => {
-        "currenttimestamp": currenttimestamp,
-        "categorylist": List<dynamic>.from(categorylist.map((x) => x.toJson())),
-        "imagelist": List<dynamic>.from(imagelist.map((x) => x)),
+        "category_list":
+            List<dynamic>.from(categoryList.map((x) => x.toJson())),
+        "homepage_image_list":
+            List<dynamic>.from(homepageImageList.map((x) => x)),
       };
 }
 
-class Categorylist {
+class CategoryModel {
   String id;
-  String weburl;
-  String itemicon;
-  String itemtext;
+  String url;
+  String icon;
+  String text;
 
-  Categorylist({
+  CategoryModel({
     this.id,
-    this.weburl,
-    this.itemicon,
-    this.itemtext,
+    this.url,
+    this.icon,
+    this.text,
   });
 
-  factory Categorylist.fromJson(Map<String, dynamic> json) => Categorylist(
+  CategoryModel.fromMap(Map<dynamic, dynamic> map)
+      : id = map["id"],
+        url = map["url"],
+        icon = map["icon"],
+        text = map["text"];
+
+  factory CategoryModel.fromJson(Map<String, dynamic> json) => CategoryModel(
         id: json["id"],
-        weburl: json["weburl"],
-        itemicon: json["itemicon"],
-        itemtext: json["itemtext"],
+        url: json["url"],
+        icon: json["icon"],
+        text: json["text"],
       );
 
   Map<String, dynamic> toJson() => {
         "id": id,
-        "weburl": weburl,
-        "itemicon": itemicon,
-        "itemtext": itemtext,
+        "url": url,
+        "icon": icon,
+        "text": text,
       };
 }

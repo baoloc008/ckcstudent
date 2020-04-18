@@ -1,7 +1,13 @@
+import 'package:ckcstudent/models/app_config.dart';
 import 'package:flutter/material.dart';
+
 import 'category_item.dart';
 
 class CategoryList extends StatelessWidget {
+  final List<CategoryModel> categoryList;
+
+  CategoryList({this.categoryList});
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -16,10 +22,12 @@ class CategoryList extends StatelessWidget {
           right: 30,
           bottom: 21, // equal blurRadius + offset.y
         ),
-        itemCount: 10,
+        itemCount: this.categoryList.length,
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) {
-          return CategoryItem();
+          return CategoryItem(
+            categoryModel: categoryList[index],
+          );
         },
         separatorBuilder: (context, index) {
           return SizedBox(width: 20);
