@@ -7,3 +7,5 @@ Todos
 - [ ] integrate crashlytic
 - [ ] dark mode
 - [ ] fix bug sometime crash when start app
+- [ ] implement category list logic
+- [ ] add carousel

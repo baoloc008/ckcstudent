@@ -14,7 +14,7 @@ class CKCStudentApp extends StatelessWidget {
       ),
     );
     return MaterialApp(
-      title: "CKC STUDENTS",
+      title: 'CKC STUDENTS',
       theme: ThemeData(
         primarySwatch: MaterialColor(0xFF2F80ED, swatch),
         fontFamily: 'SFCompactDisplay-Regular',
