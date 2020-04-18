@@ -1,4 +1,4 @@
-import 'package:ckcstudent/pages/widgets/bottom_bar_container.dart';
+import 'package:ckcstudent/bottom_navigator.dart';
 import 'package:ckcstudent/themes/color.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -19,7 +19,7 @@ class CKCStudentApp extends StatelessWidget {
         primarySwatch: MaterialColor(0xFF2F80ED, swatch),
         fontFamily: 'SFCompactDisplay-Regular',
       ),
-      home: BottomBarContainer(),
+      home: BottomNavigator(),
     );
   }
 }
