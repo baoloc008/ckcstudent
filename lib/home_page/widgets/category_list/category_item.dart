@@ -1,11 +1,12 @@
 import 'package:ckcstudent/models/app_config.dart';
 import 'package:ckcstudent/widgets/general/box_shadow.dart';
 import 'package:flutter/material.dart';
+import 'package:transparent_image/transparent_image.dart';
 
 class CategoryItem extends StatelessWidget {
   final CategoryModel categoryModel;
 
-   CategoryItem({this.categoryModel});
+  CategoryItem({this.categoryModel});
 
   @override
   Widget build(BuildContext context) {
@@ -20,10 +21,12 @@ class CategoryItem extends StatelessWidget {
       ),
       child: Column(
         children: <Widget>[
-          Icon(
-            Icons.add_alert,
-            color: Theme.of(context).primaryColor,
-            size: 50,
+          Container(
+            width: 50,
+            child: FadeInImage.memoryNetwork(
+              placeholder: kTransparentImage,
+              image: categoryModel.icon,
+            ),
           ),
           SizedBox(height: 15),
           Text(
