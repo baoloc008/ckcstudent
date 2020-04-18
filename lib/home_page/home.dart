@@ -1,7 +1,7 @@
 import 'package:ckcstudent/home_page/widgets/category_list/category_list.dart';
+import 'package:ckcstudent/home_page/widgets/image_carousel.dart';
 import 'package:ckcstudent/home_page/widgets/top_banner/top_banner.dart';
 import 'package:ckcstudent/models/app_config.dart';
-import 'package:ckcstudent/widgets/image_carousel.dart';
 import 'package:ckcstudent/widgets/right_appbar.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
@@ -51,9 +51,13 @@ class _HomePageState extends State<HomePage> {
                     height: 10,
                   ),
                   CategoryList(
-                    categoryList: AppConfig.fromSnapshot(snapshot.data.documents[0]).categoryList
+                      categoryList:
+                          AppConfig.fromSnapshot(snapshot.data.documents[0])
+                              .categoryList),
+                  ImageCarousel(
+                    imgList: AppConfig.fromSnapshot(snapshot.data.documents[0])
+                        .homepageImageList,
                   ),
-                  ImageCarousel(),
                 ],
               );
             })
