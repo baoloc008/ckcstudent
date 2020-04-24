@@ -134,10 +134,6 @@ class ImageCarousel extends StatelessWidget {
                 ))
             .toList(),
       ),
-//      child: ClipRRect(
-//        borderRadius: BorderRadius.circular(16),
-//        child: Image.network('https://picsum.photos/900/500'),
-//      ),
     );
   }
 }

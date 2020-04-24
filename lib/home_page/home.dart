@@ -13,86 +13,52 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-//  @override
-//  void didChangeDependencies() {
-//    super.didChangeDependencies();
-//  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          titleSpacing: 30,
-          centerTitle: false,
-          title: Text(
-            'CKC STUDENTS',
-            style: TextStyle(
-              fontSize: 20,
-              fontFamily: 'SFCompactDisplay-Bold',
-            ),
+      appBar: AppBar(
+        titleSpacing: 30,
+        centerTitle: false,
+        title: Text(
+          'CKC STUDENTS',
+          style: TextStyle(
+            fontSize: 20,
+            fontFamily: 'SFCompactDisplay-Bold',
           ),
-          actions: <Widget>[
-            Container(
-              padding: EdgeInsets.only(right: 30, bottom: 10),
-              child: RightAppBar(),
-            )
-          ],
         ),
-        body: StreamBuilder<QuerySnapshot>(
-            stream: Firestore.instance.collection('appconfig').snapshots(),
-            builder: (context, snapshot) {
-              if (!snapshot.hasData) {
-                return CupertinoActivityIndicator(radius: 20);
-              }
-              return ListView(
-                children: <Widget>[
-                  TopBanner(),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  CategoryList(
-                      categoryList:
-                          AppConfig.fromSnapshot(snapshot.data.documents[0])
-                              .categoryList),
-                  ImageCarousel(
-                    imgList: AppConfig.fromSnapshot(snapshot.data.documents[0])
-                        .homepageImageList,
-                  ),
-                ],
-              );
-            })
-//      body: Consumer<HomeBloc>(
-//        builder: (context, bloc, child) => StreamBuilder<AppConfig>(
-//          stream: bloc.homeStream,
-//          builder: (context, snapShot) {
-//            print('snapShot.data ${snapShot.data}');
-//            switch (snapShot.connectionState) {
-//              case ConnectionState.active:
-//                print('snapShot.data ${snapShot.data.categorylist}');
+        actions: <Widget>[
+          Container(
+            padding: EdgeInsets.only(right: 30, bottom: 10),
+            child: RightAppBar(),
+          )
+        ],
+      ),
+      body: StreamBuilder<QuerySnapshot>(
+        stream: Firestore.instance.collection('appconfig').snapshots(),
+        builder: (context, snapshot) {
+//          TODO: handle error
+//              if (snapshot.hasError) {
 //
-//                return ListView(
-//                  children: <Widget>[
-//                    TopBanner(),
-//                    SizedBox(
-//                      height: 10,
-//                    ),
-//                    CategoryList(),
-//                    ImageCarousel(),
-//                  ],
-//                );
-//              case ConnectionState.none:
-//              default:
-//                return Center(
-//                  child: Container(
-//                    child: CupertinoActivityIndicator(
-//                      radius: 20,
-//                    ),
-//                  ),
-//                );
-//            }
-//          },
-//        ),
-//      ),
-        );
+//              }
+          if (!snapshot.hasData) {
+            return CupertinoActivityIndicator(radius: 20);
+          }
+          return ListView(
+            children: <Widget>[
+              TopBanner(),
+              SizedBox(height: 10),
+              CategoryList(
+                  categoryList:
+                      AppConfig.fromSnapshot(snapshot.data.documents[0])
+                          .categoryList),
+              ImageCarousel(
+                imgList: AppConfig.fromSnapshot(snapshot.data.documents[0])
+                    .homepageImageList,
+              ),
+            ],
+          );
+        },
+      ),
+    );
   }
 }
