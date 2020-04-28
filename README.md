@@ -2,6 +2,10 @@
 
 An application for student
 
+Tech Stack
+- Flutter
+- Cloud Firestore
+
 Todos
 - [ ] overflow text
 - [ ] integrate crashlytic
