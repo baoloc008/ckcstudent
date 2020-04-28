@@ -41,7 +41,7 @@ class _HomePageState extends State<HomePage> {
 //
 //              }
           if (!snapshot.hasData) {
-            return CupertinoActivityIndicator(radius: 20);
+            return Center(child: CupertinoActivityIndicator(radius: 20));
           }
           return ListView(
             children: <Widget>[
