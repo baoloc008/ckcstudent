@@ -1,25 +1,9 @@
-import 'package:ckcstudent/bottom_navigator.dart';
-import 'package:ckcstudent/themes/color.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 
-void main() => runApp(CKCStudentApp());
+import 'app.dart';
 
-class CKCStudentApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    SystemChrome.setSystemUIOverlayStyle(
-      SystemUiOverlayStyle(
-        statusBarColor: Colors.transparent,
-      ),
-    );
-    return MaterialApp(
-      title: 'CKC STUDENTS',
-      theme: ThemeData(
-        primarySwatch: MaterialColor(0xFF2F80ED, swatch),
-        fontFamily: 'SFCompactDisplay-Regular',
-      ),
-      home: BottomNavigator(),
-    );
-  }
+void main() {
+  FlutterError.onError = Crashlytics.instance.recordFlutterError;
+  runApp(MyApp());
 }
