@@ -14,6 +14,7 @@ Todos
 - [x] integrate crashlytics ([#1](https://github.com/baoloc008/ckcstudent/pull/1))
 - [ ] dark mode
 - [ ] force update
+- [x] add Firebase App Distribution ([#3](https://github.com/baoloc008/ckcstudent/pull/3))
 
 Bugs
 - [ ] fix overflow text
