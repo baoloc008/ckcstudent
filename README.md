@@ -11,7 +11,7 @@ Todos
 - [ ] implement category list logic
 - [ ] add carousel
 - [ ] add web view
-- [ ] integrate crashlytics
+- [x] integrate crashlytics ([#1](https://github.com/baoloc008/ckcstudent/pull/1))
 - [ ] dark mode
 - [ ] force update
 
