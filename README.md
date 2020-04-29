@@ -17,4 +17,4 @@ Todos
 
 Bugs
 - [ ] fix overflow text
-- [ ] fix bug sometime crash when start app
+- [x] fix bug sometime crash when start app ([#2](https://github.com/baoloc008/ckcstudent/pull/2))
