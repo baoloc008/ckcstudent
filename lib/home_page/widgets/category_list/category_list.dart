@@ -16,7 +16,6 @@ class CategoryList extends StatelessWidget {
         top: 8, // 19 - blurRadius - offset.y
       ),
       child: ListView.separated(
-
         padding: EdgeInsets.only(
           left: 30,
           top: 11, // equal equal blurRadius - offset.y

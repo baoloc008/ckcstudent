@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 class TopBannerListItem extends StatelessWidget {
   final String text;
+
   TopBannerListItem({this.text});
 
   @override

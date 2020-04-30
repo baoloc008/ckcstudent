@@ -38,8 +38,11 @@ class _BottomNavigatorState extends State<BottomNavigator> {
   void initState() {
     super.initState();
     originalList = List<Widget>.from(tabList.map((item) => item['child']));
-    originalDic = Map.fromIterable(tabList,
-        key: (item) => item['index'], value: (item) => item['mounted']);
+    originalDic = Map.fromIterable(
+      tabList,
+      key: (item) => item['index'],
+      value: (item) => item['mounted'],
+    );
     listScreens = [originalList.first];
     listScreensIndex = [0];
   }
@@ -49,9 +52,8 @@ class _BottomNavigatorState extends State<BottomNavigator> {
       listScreensIndex.add(index);
       originalDic[index] = true;
       listScreensIndex.sort();
-      listScreens = listScreensIndex.map((index) {
-        return originalList[index];
-      }).toList();
+      listScreens =
+          listScreensIndex.map((index) => originalList[index]).toList();
     }
 
     setState(() {

@@ -1,5 +1,5 @@
-import 'package:ckcstudent/home_page/home.dart';
 import 'package:ckcstudent/guide_page/guide.dart';
+import 'package:ckcstudent/home_page/home.dart';
 import 'package:flutter/material.dart';
 
 class BottomBarContainer extends StatefulWidget {
@@ -112,6 +112,7 @@ class _BottomBarContainerState extends State<BottomBarContainer> {
 
 class BottomAppBarItem {
   BottomAppBarItem({this.iconData, this.text});
+
   IconData iconData;
   String text;
 }
