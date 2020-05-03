@@ -14,15 +14,25 @@ class CarouselItem extends StatelessWidget {
         borderRadius: BorderRadius.circular(8),
         child: Container(
           height: 200,
+          width: 200 * 16 / 9,
           child: CachedNetworkImage(
             fit: BoxFit.fill,
             imageUrl: imageUrl,
             progressIndicatorBuilder: (context, url, downloadProgress) =>
-                Center(
-              child:
-                  CircularProgressIndicator(value: downloadProgress.progress),
+                Container(
+              decoration: BoxDecoration(color: Theme.of(context).dividerColor),
+              child: Center(
+                  child: CircularProgressIndicator(
+                      value: downloadProgress.progress)),
             ),
-            errorWidget: (context, url, error) => Icon(Icons.error),
+            errorWidget: (context, url, error) => Container(
+              decoration: BoxDecoration(color: Theme.of(context).dividerColor),
+              child: Icon(
+                Icons.error,
+                color: Theme.of(context).errorColor,
+                size: 40,
+              ),
+            ),
           ),
         ),
       ),
