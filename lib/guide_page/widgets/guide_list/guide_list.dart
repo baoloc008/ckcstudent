@@ -5,14 +5,13 @@ import 'guide_item.dart';
 class GuideList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return GridView.count(
+    return ListView.separated(
       padding: EdgeInsets.all(30),
-      crossAxisCount: 2,
-      mainAxisSpacing: 20,
-      crossAxisSpacing: 20,
-      children: List.generate(30, (index) {
-        return GuideItem();
-      }),
+      itemCount: 30,
+      itemBuilder: (context, index) => GuideItem(),
+      separatorBuilder: (BuildContext context, int index) => SizedBox(
+        height: 20,
+      ),
     );
   }
 }
