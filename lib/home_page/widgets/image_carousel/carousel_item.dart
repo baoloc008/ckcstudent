@@ -1,19 +1,27 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:ckcstudent/image_viewer_page/image_viewer_page.dart';
 import 'package:flutter/material.dart';
 
 class CarouselItem extends StatelessWidget {
   final String imageUrl;
+  final int currentIndex;
 
-  const CarouselItem({Key key, this.imageUrl}) : super(key: key);
+  const CarouselItem({Key key, this.imageUrl, this.currentIndex})
+      : super(key: key);
+
+  void launchImageViewer(BuildContext context) {
+    Navigator.push(
+        context,
+        MaterialPageRoute(
+            builder: (context) => ImageViewerPage(
+                  imageUrl: imageUrl,
+                )));
+  }
 
   @override
   Widget build(BuildContext context) {
-    Color placeHolderColor = Theme
-        .of(context)
-        .dividerColor;
-    Color errorColor = Theme
-        .of(context)
-        .errorColor;
+    Color placeHolderColor = Theme.of(context).dividerColor;
+    Color errorColor = Theme.of(context).errorColor;
 
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 5),
@@ -22,26 +30,28 @@ class CarouselItem extends StatelessWidget {
         child: Container(
           height: 200,
           width: 200 * 16 / 9,
-          child: CachedNetworkImage(
-            fit: BoxFit.fill,
-            imageUrl: imageUrl,
-            progressIndicatorBuilder: (context, url, downloadProgress) =>
-                Container(
-                  decoration: BoxDecoration(color: placeHolderColor),
-                  child: Center(
-                    child:
-                    CircularProgressIndicator(value: downloadProgress.progress),
-                  ),
+          child: GestureDetector(
+            onTap: () => launchImageViewer(context),
+            child: CachedNetworkImage(
+              fit: BoxFit.fill,
+              imageUrl: imageUrl,
+              progressIndicatorBuilder: (context, url, downloadProgress) =>
+                  Container(
+                decoration: BoxDecoration(color: placeHolderColor),
+                child: Center(
+                  child: CircularProgressIndicator(
+                      value: downloadProgress.progress),
                 ),
-            errorWidget: (context, url, error) =>
-                Container(
-                  decoration: BoxDecoration(color: placeHolderColor),
-                  child: Icon(
-                    Icons.error,
-                    color: errorColor,
-                    size: 40,
-                  ),
+              ),
+              errorWidget: (context, url, error) => Container(
+                decoration: BoxDecoration(color: placeHolderColor),
+                child: Icon(
+                  Icons.error,
+                  color: errorColor,
+                  size: 40,
                 ),
+              ),
+            ),
           ),
         ),
       ),

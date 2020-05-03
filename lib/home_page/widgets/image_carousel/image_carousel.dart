@@ -27,7 +27,10 @@ class _ImageCarouselState extends State<ImageCarousel> {
       child: Column(children: [
         CarouselSlider(
           items: widget.imgList
-              .map((item) => CarouselItem(imageUrl: item))
+              .map((item) => CarouselItem(
+                    imageUrl: item,
+                    currentIndex: _current,
+                  ))
               .toList(),
           options: CarouselOptions(
               autoPlay: true,
