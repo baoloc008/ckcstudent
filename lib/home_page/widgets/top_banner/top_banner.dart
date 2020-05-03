@@ -20,7 +20,7 @@ class TopBanner extends StatelessWidget {
       ),
       decoration: BoxDecoration(
         color: Theme.of(context).primaryColor,
-        borderRadius: BorderRadius.all(Radius.circular(16)),
+        borderRadius: BorderRadius.all(Radius.circular(8)),
         boxShadow: [BlueBoxShadow],
       ),
       child: SizedBox(

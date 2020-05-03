@@ -38,7 +38,7 @@ class CategoryItem extends StatelessWidget {
         decoration: BoxDecoration(
           color: Colors.white,
           boxShadow: [BlueBoxShadow],
-          borderRadius: BorderRadius.all(Radius.circular(16)),
+          borderRadius: BorderRadius.all(Radius.circular(8)),
         ),
         child: Column(
           children: <Widget>[
