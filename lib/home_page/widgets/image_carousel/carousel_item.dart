@@ -8,6 +8,13 @@ class CarouselItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Color placeHolderColor = Theme
+        .of(context)
+        .dividerColor;
+    Color errorColor = Theme
+        .of(context)
+        .errorColor;
+
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 5),
       child: ClipRRect(
@@ -20,19 +27,21 @@ class CarouselItem extends StatelessWidget {
             imageUrl: imageUrl,
             progressIndicatorBuilder: (context, url, downloadProgress) =>
                 Container(
-              decoration: BoxDecoration(color: Theme.of(context).dividerColor),
-              child: Center(
-                  child: CircularProgressIndicator(
-                      value: downloadProgress.progress)),
-            ),
-            errorWidget: (context, url, error) => Container(
-              decoration: BoxDecoration(color: Theme.of(context).dividerColor),
-              child: Icon(
-                Icons.error,
-                color: Theme.of(context).errorColor,
-                size: 40,
-              ),
-            ),
+                  decoration: BoxDecoration(color: placeHolderColor),
+                  child: Center(
+                    child:
+                    CircularProgressIndicator(value: downloadProgress.progress),
+                  ),
+                ),
+            errorWidget: (context, url, error) =>
+                Container(
+                  decoration: BoxDecoration(color: placeHolderColor),
+                  child: Icon(
+                    Icons.error,
+                    color: errorColor,
+                    size: 40,
+                  ),
+                ),
           ),
         ),
       ),

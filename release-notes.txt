@@ -1,3 +1,4 @@
 What's new:
-- change homepage carousel style
-- update image with 16/9 aspect ratio
+- Change homepage carousel style
+- Update image with 16/9 aspect ratio
+- Add placeholder when loading image, load image failed
