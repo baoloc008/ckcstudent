@@ -3,3 +3,5 @@ What's new:
 - Update image with 16/9 aspect ratio
 - Add placeholder when loading image, load image failed
 - User can click on image to see and zoom with full resolution
+- Change border radius from 16 to 8
+- Update GuideItem UI
