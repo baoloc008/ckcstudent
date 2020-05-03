@@ -54,6 +54,8 @@ class _HomePageState extends State<HomePage> {
               ImageCarousel(
                 imgList: AppConfig.fromSnapshot(snapshot.data.documents[0])
                     .homepageImageList,
+                fullImgList: AppConfig.fromSnapshot(snapshot.data.documents[0])
+                    .homepageFullImageList,
               ),
             ],
           );

@@ -5,8 +5,9 @@ import 'package:flutter/material.dart';
 
 class ImageCarousel extends StatefulWidget {
   final List<String> imgList;
+  final List<String> fullImgList;
 
-  ImageCarousel({this.imgList});
+  ImageCarousel({this.imgList, this.fullImgList});
 
   @override
   State<StatefulWidget> createState() {
@@ -28,6 +29,7 @@ class _ImageCarouselState extends State<ImageCarousel> {
         CarouselSlider(
           items: widget.imgList
               .map((item) => CarouselItem(
+                    fullImageUrl: widget.fullImgList[_current],
                     imageUrl: item,
                     currentIndex: _current,
                   ))

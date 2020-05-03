@@ -15,6 +15,31 @@ class ImageViewerPage extends StatelessWidget {
         PhotoView.customChild(
           child: CachedNetworkImage(
             imageUrl: imageUrl,
+            progressIndicatorBuilder: (context, url, downloadProgress) =>
+                Container(
+              child: Center(
+                child:
+                    CircularProgressIndicator(value: downloadProgress.progress),
+              ),
+            ),
+            errorWidget: (context, url, error) => Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Icon(
+                  Icons.error,
+                  color: Theme.of(context).errorColor,
+                  size: 40,
+                ),
+                SizedBox(height: 10),
+                Text(
+                  'Ảnh đã bị lỗi!',
+                  style: TextStyle(
+                    fontSize: 15,
+                    color: Colors.white,
+                  ),
+                )
+              ],
+            ),
           ),
           minScale: PhotoViewComputedScale.contained * 0.5,
           maxScale: PhotoViewComputedScale.covered * 4,

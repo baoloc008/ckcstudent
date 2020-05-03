@@ -4,9 +4,11 @@ import 'package:flutter/material.dart';
 
 class CarouselItem extends StatelessWidget {
   final String imageUrl;
+  final String fullImageUrl;
   final int currentIndex;
 
-  const CarouselItem({Key key, this.imageUrl, this.currentIndex})
+  const CarouselItem(
+      {Key key, this.imageUrl, this.currentIndex, this.fullImageUrl})
       : super(key: key);
 
   void launchImageViewer(BuildContext context) {
@@ -14,7 +16,7 @@ class CarouselItem extends StatelessWidget {
         context,
         MaterialPageRoute(
             builder: (context) => ImageViewerPage(
-                  imageUrl: imageUrl,
+                  imageUrl: fullImageUrl,
                 )));
   }
 
