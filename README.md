@@ -9,7 +9,7 @@ An application for student
 
 ## Todos
 - [ ] implement category list logic
-- [ ] add carousel
+- [x] add carousel ([#4](https://github.com/baoloc008/ckcstudent/pull/4))
 - [ ] add web view
 - [x] integrate crashlytics ([#1](https://github.com/baoloc008/ckcstudent/pull/1))
 - [ ] dark mode
