@@ -2,8 +2,16 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ckcstudent/widgets/ckc_progress_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:photo_view/photo_view.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class ImageViewerPage extends StatelessWidget {
+  _launchURL(String url) async {
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
   final String imageUrl;
 
   const ImageViewerPage({Key key, this.imageUrl}) : super(key: key);
@@ -45,7 +53,15 @@ class ImageViewerPage extends StatelessWidget {
           maxScale: PhotoViewComputedScale.covered * 4,
         ),
         Positioned(
-          top: 30,
+          top: 50,
+          left: 10,
+          child: GestureDetector(
+            onTap: () => _launchURL(imageUrl),
+            child: Icon(Icons.file_download, color: Colors.grey[400], size: 30),
+          ),
+        ),
+        Positioned(
+          top: 50,
           right: 10,
           child: GestureDetector(
             onTap: () => Navigator.pop(context),

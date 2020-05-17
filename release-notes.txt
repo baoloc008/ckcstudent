@@ -1,2 +1,4 @@
 What's new:
-- Upgrade flutter 1.17
+- WebView: allow user to download file
+- WebView: allow user to back to previous page
+- ImageViewer: allow user download image
