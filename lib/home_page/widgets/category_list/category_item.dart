@@ -1,8 +1,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ckcstudent/models/app_config.dart';
+import 'package:ckcstudent/widgets/box_shadow.dart';
 import 'package:ckcstudent/widgets/ckc_progress_indicator.dart';
 import 'package:ckcstudent/widgets/ckc_web_view.dart';
-import 'package:ckcstudent/widgets/box_shadow.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 

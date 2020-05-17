@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-
 class CKCWebView extends StatefulWidget {
   final String titleBar;
   final String url;
@@ -16,8 +15,8 @@ class CKCWebView extends StatefulWidget {
 }
 
 class _CKCWebViewState extends State<CKCWebView> {
-
   final flutterWebviewPlugin = new FlutterWebviewPlugin();
+
   _launchURL(String url) async {
     if (await canLaunch(url)) {
       await launch(url);
@@ -26,24 +25,44 @@ class _CKCWebViewState extends State<CKCWebView> {
     }
   }
 
+  Future<bool> _onBackPressed() async {
+    if (await flutterWebviewPlugin.canGoBack()) {
+      await flutterWebviewPlugin.goBack();
+      return Future.value(false);
+    }
+    return Future.value(true);
+  }
+
   @override
   Widget build(BuildContext context) {
-    return WebviewScaffold(
-      url: widget.url,
-      withJavascript: true,
-      withZoom: false,
-      hidden: true,
-      appBar: AppBar(
-        centerTitle: true,
-        title: Text(
-          widget.titleBar,
-          style: TextStyle(
-            fontSize: 20,
-            fontFamily: 'SFCompactDisplay-Bold',
+    return WillPopScope(
+      onWillPop: _onBackPressed,
+      child: WebviewScaffold(
+        url: widget.url,
+        withJavascript: true,
+        withZoom: false,
+        hidden: true,
+        appBar: AppBar(
+          centerTitle: true,
+          title: Text(
+            widget.titleBar,
+            style: TextStyle(
+              fontSize: 20,
+              fontFamily: 'SFCompactDisplay-Bold',
+            ),
           ),
+          actions: <Widget>[
+            IconButton(
+              icon: Icon(
+                Icons.close,
+                size: 30,
+              ),
+              onPressed: () => Navigator.of(context).pop(),
+            )
+          ],
         ),
+        initialChild: CKCProgressIndicator(),
       ),
-      initialChild: CKCProgressIndicator(),
     );
   }
 
@@ -51,7 +70,8 @@ class _CKCWebViewState extends State<CKCWebView> {
   void initState() {
     super.initState();
     flutterWebviewPlugin.onUrlChanged.listen((String url) {
-      if ([".pdf", ".docs", ".doc", ".xlsx", ".xls"].any((element) => url.endsWith(element))) {
+      if ([".pdf", ".docs", ".doc", ".xlsx", ".xls"]
+          .any((element) => url.endsWith(element))) {
         _launchURL(url);
       }
     });
