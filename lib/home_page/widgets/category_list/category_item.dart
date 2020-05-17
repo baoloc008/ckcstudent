@@ -13,7 +13,6 @@ class CategoryItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Color placeHolderColor = Theme.of(context).dividerColor;
     Color errorColor = Theme.of(context).errorColor;
     return GestureDetector(
       onTap: () => Navigator.push(
@@ -28,17 +27,19 @@ class CategoryItem extends StatelessWidget {
       child: Container(
         width: 135,
         height: 135,
-        padding: EdgeInsets.all(20),
+        padding: EdgeInsets.all(15),
         decoration: BoxDecoration(
           color: Colors.white,
           boxShadow: [BlueBoxShadow],
           borderRadius: BorderRadius.all(Radius.circular(8)),
         ),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             Container(
               width: 50,
               child: CachedNetworkImage(
+                fit: BoxFit.contain,
                 imageUrl: categoryModel.icon,
                 progressIndicatorBuilder: (context, url, downloadProgress) =>
                     Container(
@@ -55,15 +56,17 @@ class CategoryItem extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 15),
+            SizedBox(height: 10),
             Text(
               categoryModel.text,
               textAlign: TextAlign.center,
+              overflow: TextOverflow.ellipsis,
               style: TextStyle(
                 color: Colors.black,
                 fontFamily: 'SFCompactDisplay-Semibold',
                 fontSize: 12,
               ),
+              maxLines: 3,
             )
           ],
         ),
