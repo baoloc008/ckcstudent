@@ -1,4 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:ckcstudent/widgets/ckc_progress_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:photo_view/photo_view.dart';
 
@@ -17,9 +18,8 @@ class ImageViewerPage extends StatelessWidget {
             imageUrl: imageUrl,
             progressIndicatorBuilder: (context, url, downloadProgress) =>
                 Container(
-              child: Center(
-                child:
-                    CircularProgressIndicator(value: downloadProgress.progress),
+              child: CKCProgressIndicator(
+                value: downloadProgress.progress,
               ),
             ),
             errorWidget: (context, url, error) => Column(

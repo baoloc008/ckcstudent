@@ -2,6 +2,7 @@ import 'package:ckcstudent/home_page/widgets/category_list/category_list.dart';
 import 'package:ckcstudent/home_page/widgets/image_carousel/image_carousel.dart';
 import 'package:ckcstudent/home_page/widgets/top_banner/top_banner.dart';
 import 'package:ckcstudent/models/app_config.dart';
+import 'package:ckcstudent/widgets/ckc_progress_indicator.dart';
 import 'package:ckcstudent/widgets/right_appbar.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
@@ -41,7 +42,7 @@ class _HomePageState extends State<HomePage> {
 //
 //              }
           if (!snapshot.hasData) {
-            return Center(child: CupertinoActivityIndicator(radius: 20));
+            return CKCProgressIndicator();
           }
           return ListView(
             children: <Widget>[

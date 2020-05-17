@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ckcstudent/image_viewer_page/image_viewer_page.dart';
+import 'package:ckcstudent/widgets/ckc_progress_indicator.dart';
 import 'package:flutter/material.dart';
 
 class CarouselItem extends StatelessWidget {
@@ -13,11 +14,13 @@ class CarouselItem extends StatelessWidget {
 
   void launchImageViewer(BuildContext context) {
     Navigator.push(
-        context,
-        MaterialPageRoute(
-            builder: (context) => ImageViewerPage(
-                  imageUrl: fullImageUrl,
-                )));
+      context,
+      MaterialPageRoute(
+        builder: (context) => ImageViewerPage(
+          imageUrl: fullImageUrl,
+        ),
+      ),
+    );
   }
 
   @override
@@ -40,9 +43,8 @@ class CarouselItem extends StatelessWidget {
               progressIndicatorBuilder: (context, url, downloadProgress) =>
                   Container(
                 decoration: BoxDecoration(color: placeHolderColor),
-                child: Center(
-                  child: CircularProgressIndicator(
-                      value: downloadProgress.progress),
+                child: CKCProgressIndicator(
+                  value: downloadProgress.progress,
                 ),
               ),
               errorWidget: (context, url, error) => Container(

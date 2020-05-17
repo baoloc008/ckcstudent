@@ -1,4 +1,4 @@
-import 'package:ckcstudent/widgets/general/box_shadow.dart';
+import 'package:ckcstudent/widgets/box_shadow.dart';
 import 'package:flutter/material.dart';
 
 class GuideItem2 extends StatelessWidget {
