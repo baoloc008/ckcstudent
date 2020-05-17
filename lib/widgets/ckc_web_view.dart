@@ -55,7 +55,7 @@ class _CKCWebViewState extends State<CKCWebView> {
             IconButton(
               icon: Icon(
                 Icons.close,
-                size: 30,
+                size: 25,
               ),
               onPressed: () => Navigator.of(context).pop(),
             )
@@ -71,7 +71,7 @@ class _CKCWebViewState extends State<CKCWebView> {
     super.initState();
     flutterWebviewPlugin.onUrlChanged.listen((String url) {
       if ([".pdf", ".docs", ".doc", ".xlsx", ".xls"]
-          .any((element) => url.endsWith(element))) {
+          .any((element) => url.contains(element))) {
         _launchURL(url);
       }
     });
