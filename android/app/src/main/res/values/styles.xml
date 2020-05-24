@@ -9,5 +9,8 @@
         <item name="android:windowBackground">@drawable/launch_background</item>
     </style>
 
+    <style name="WebViewTheme" parent="Theme.AppCompat.Light">
+    </style>
+
     <color name="blue">#FF2196F3</color>
 </resources>

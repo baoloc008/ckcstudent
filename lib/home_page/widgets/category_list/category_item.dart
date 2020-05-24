@@ -2,28 +2,43 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ckcstudent/models/app_config.dart';
 import 'package:ckcstudent/widgets/box_shadow.dart';
 import 'package:ckcstudent/widgets/ckc_progress_indicator.dart';
-import 'package:ckcstudent/widgets/ckc_web_view.dart';
+import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class CategoryItem extends StatelessWidget {
   final CategoryModel categoryModel;
+  static const platform = const MethodChannel('vn.edu.ckcstudent/webview');
 
   CategoryItem({this.categoryModel});
+
+  Future<void> _launchWebView() async {
+    try {
+      final int result = await platform
+          .invokeMethod('launchWebView', {'url': categoryModel.url});
+      if (result != 1) {
+        throw ('launch web view error');
+      }
+    } catch (e, stack) {
+      Crashlytics.instance.recordError(e, stack);
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     Color errorColor = Theme.of(context).errorColor;
     return GestureDetector(
-      onTap: () => Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (context) => CKCWebView(
-            titleBar: 'CKC STUDENTS',
-            url: categoryModel.url,
-          ),
-        ),
-      ),
+      onTap: _launchWebView,
+      // onTap: () => Navigator.push(
+      //   context,
+      //   MaterialPageRoute(
+      //     builder: (context) => CKCWebView(
+      //       titleBar: 'CKC STUDENTS',
+      //       url: categoryModel.url,
+      //     ),
+      //   ),
+      // ),
       child: Container(
         width: 135,
         height: 135,

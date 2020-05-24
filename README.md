@@ -4,15 +4,14 @@ An application for student
 
 ## Tech Stack
 - Flutter
-- Cloud Firestore
-- Firebase Crashlytics
+- Firebase
 
 ## Todos
 - [ ] implement category list logic
 - [x] add carousel ([#4](https://github.com/baoloc008/ckcstudent/pull/4))
 - [ ] add web view
 - [x] integrate crashlytics ([#1](https://github.com/baoloc008/ckcstudent/pull/1))
-- [ ] dark mode
+- [ ] theming
 - [ ] force update
 - [x] add Firebase App Distribution ([#3](https://github.com/baoloc008/ckcstudent/pull/3))
 
