@@ -10,6 +10,7 @@
     </style>
 
     <style name="WebViewTheme" parent="Theme.AppCompat.Light">
+        <item name="android:windowBackground">@color/blue</item>
     </style>
 
     <color name="blue">#FF2196F3</color>

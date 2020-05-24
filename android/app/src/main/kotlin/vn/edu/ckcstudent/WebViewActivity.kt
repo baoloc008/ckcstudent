@@ -40,6 +40,13 @@ class WebViewActivity : AppCompatActivity() {
         setWebClient()
         handlePullToRefresh()
         loadUrl(pageUrl)
+
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        finish()
+        return true
     }
 
     private fun handlePullToRefresh() {
