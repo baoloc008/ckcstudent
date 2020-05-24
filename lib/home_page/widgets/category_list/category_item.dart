@@ -63,7 +63,7 @@ class CategoryItem extends StatelessWidget {
               overflow: TextOverflow.ellipsis,
               style: TextStyle(
                 color: Colors.black,
-                fontFamily: 'SFCompactDisplay-Semibold',
+                fontFamily: 'SFCompactDisplay-Medium',
                 fontSize: 12,
               ),
               maxLines: 3,
