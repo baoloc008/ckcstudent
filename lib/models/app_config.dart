@@ -10,11 +10,13 @@ class AppConfig {
   List<CategoryModel> categoryList;
   List<String> homepageImageList;
   List<String> homepageFullImageList;
+  String homepageBannerUrl;
 
   AppConfig({
     this.categoryList,
     this.homepageImageList,
     this.homepageFullImageList,
+    this.homepageBannerUrl
   });
 
   factory AppConfig.fromMap(Map<String, dynamic> map, String reference) {
@@ -25,6 +27,7 @@ class AppConfig {
           List<String>.from(map['homepage_image_list'].map((x) => x)),
       homepageFullImageList:
           List<String>.from(map['homepage_full_image_list'].map((x) => x)),
+      homepageBannerUrl: map['homepage_banner_url'].toString()
     );
   }
 
@@ -39,6 +42,7 @@ class AppConfig {
             List<String>.from(json["homepage_image_list"].map((x) => x)),
         homepageFullImageList:
             List<String>.from(json["homepage_full_image_list"].map((x) => x)),
+        homepageBannerUrl: json["homepage_banner_url"].toString()
       );
 
   Map<String, dynamic> toJson() => {
@@ -48,6 +52,7 @@ class AppConfig {
             List<dynamic>.from(homepageImageList.map((x) => x)),
         "homepage_full_image_list":
             List<dynamic>.from(homepageFullImageList.map((x) => x)),
+        "homepage_banner_url": homepageBannerUrl
       };
 }
 
