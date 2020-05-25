@@ -7,9 +7,9 @@ An application for student
 - Firebase
 
 ## Todos
-- [ ] implement category list logic
+- [x] implement category list logic ([#5](https://github.com/baoloc008/ckcstudent/pull/5))
 - [x] add carousel ([#4](https://github.com/baoloc008/ckcstudent/pull/4))
-- [ ] add web view
+- [x] add web view ([#5](https://github.com/baoloc008/ckcstudent/pull/5))
 - [x] integrate crashlytics ([#1](https://github.com/baoloc008/ckcstudent/pull/1))
 - [ ] theming
 - [ ] force update
