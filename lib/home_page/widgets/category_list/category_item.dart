@@ -3,6 +3,7 @@ import 'package:ckcstudent/models/app_config.dart';
 import 'package:ckcstudent/widgets/box_shadow.dart';
 import 'package:ckcstudent/widgets/ckc_progress_indicator.dart';
 import 'package:ckcstudent/widgets/ckc_web_view.dart';
+import 'package:ckcstudent/widgets/ckc_inapp_web_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -18,7 +19,7 @@ class CategoryItem extends StatelessWidget {
       onTap: () => Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) => CKCWebView(
+          builder: (context) => CKCInAppWebView(
             titleBar: 'CKC STUDENTS',
             url: categoryModel.url,
           ),
