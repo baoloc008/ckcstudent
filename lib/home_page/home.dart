@@ -44,19 +44,18 @@ class _HomePageState extends State<HomePage> {
           if (!snapshot.hasData) {
             return CKCProgressIndicator();
           }
+
+          AppConfig appConfig =
+              AppConfig.fromSnapshot(snapshot.data.documents[0]);
+
           return ListView(
             children: <Widget>[
-              TopBanner(),
+              TopBanner(appConfig.homepageBannerUrl),
               SizedBox(height: 10),
-              CategoryList(
-                  categoryList:
-                      AppConfig.fromSnapshot(snapshot.data.documents[0])
-                          .categoryList),
+              CategoryList(categoryList: appConfig.categoryList),
               ImageCarousel(
-                imgList: AppConfig.fromSnapshot(snapshot.data.documents[0])
-                    .homepageImageList,
-                fullImgList: AppConfig.fromSnapshot(snapshot.data.documents[0])
-                    .homepageFullImageList,
+                imgList: appConfig.homepageImageList,
+                fullImgList: appConfig.homepageFullImageList,
               ),
             ],
           );
