@@ -14,6 +14,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  int weekNumber = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,7 +32,7 @@ class _HomePageState extends State<HomePage> {
         actions: <Widget>[
           Container(
             padding: EdgeInsets.only(right: 30, bottom: 10),
-            child: RightAppBar(),
+            child: RightAppBar(weekNumber: this.weekNumber),
           )
         ],
       ),
@@ -62,5 +64,26 @@ class _HomePageState extends State<HomePage> {
         },
       ),
     );
+  }
+
+  Future<void> configTime() async {
+    DocumentReference documentReference =
+        Firestore.instance.collection("timestamps").document("timeupdate");
+
+    await documentReference
+        .setData({"currenttimestamp": FieldValue.serverTimestamp()});
+    DocumentSnapshot snapshot = await documentReference.get();
+
+    int timestamp = snapshot.data["currenttimestamp"].millisecondsSinceEpoch;
+    int weeks = ((timestamp - 1567357200000) / 7 / 24 / 60 / 60 / 1000).ceil();
+    setState(() {
+      this.weekNumber = weeks;
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    configTime();
   }
 }

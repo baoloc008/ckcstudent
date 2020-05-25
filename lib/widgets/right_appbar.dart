@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 
 class RightAppBar extends StatelessWidget {
+  final int weekNumber;
+
+  RightAppBar({this.weekNumber});
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -9,7 +13,7 @@ class RightAppBar extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Text(
-            'Tuần 25',
+            weekNumber > 0 ? "Tuần " + weekNumber.toString() : "",
             style: TextStyle(
               fontSize: 24,
               fontFamily: 'SFCompactDisplay-Bold',
