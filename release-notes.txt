@@ -1,5 +1,2 @@
 What's new:
-- WebView: allow user to download file
-- WebView: allow user to back to previous page
-- ImageViewer: allow user download image
-- HomePage: launch url when user click banner
+- Use server timestamp
