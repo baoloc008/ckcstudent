@@ -23,25 +23,25 @@ class TopBanner extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () => launchWebView(context),
-      child: Container(
-        margin: EdgeInsets.only(
-          left: 30,
-          top: 30,
-          right: 30,
-        ),
-        padding: EdgeInsets.only(
-          left: 28,
-          top: 20,
-          right: 28,
-          bottom: 20,
-        ),
-        decoration: BoxDecoration(
-          color: Theme.of(context).primaryColor,
-          borderRadius: BorderRadius.all(Radius.circular(8)),
-          boxShadow: [BlueBoxShadow],
-        ),
+    return Container(
+      margin: EdgeInsets.only(
+        left: 30,
+        top: 30,
+        right: 30,
+      ),
+      padding: EdgeInsets.only(
+        left: 28,
+        top: 20,
+        right: 28,
+        bottom: 20,
+      ),
+      decoration: BoxDecoration(
+        color: Theme.of(context).primaryColor,
+        borderRadius: BorderRadius.all(Radius.circular(8)),
+        boxShadow: [BlueBoxShadow],
+      ),
+      child: GestureDetector(
+        onTap: () => launchWebView(context),
         child: SizedBox(
           width: double.infinity,
           child: Column(

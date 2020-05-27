@@ -1,4 +1,5 @@
 import 'package:ckcstudent/bottom_navigator.dart';
+import 'package:ckcstudent/guide_detail_page/guide.dart';
 import 'package:ckcstudent/themes/color.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';

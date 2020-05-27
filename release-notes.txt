@@ -1,3 +1,4 @@
 What's new:
 - Use server timestamp
 - Add error placeholder
+- Add GuideDetail screen
