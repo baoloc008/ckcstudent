@@ -43,10 +43,22 @@ class _HomePageState extends State<HomePage> {
       body: StreamBuilder<QuerySnapshot>(
         stream: Firestore.instance.collection('appconfig').snapshots(),
         builder: (context, snapshot) {
-//          TODO: handle error
-//              if (snapshot.hasError) {
-//
-//              }
+          if (snapshot.hasError) {
+            return Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Icon(
+                    Icons.error,
+                    color: Colors.red,
+                    size: 50,
+                  ),
+                  SizedBox(height: 10),
+                  Text("Đã có lỗi xảy ra, vui lòng thử lại sau!"),
+                ],
+              ),
+            );
+          }
           if (!snapshot.hasData) {
             return CKCProgressIndicator();
           }

@@ -11,10 +11,9 @@ An application for student
 - [x] add carousel ([#4](https://github.com/baoloc008/ckcstudent/pull/4))
 - [x] add web view ([#5](https://github.com/baoloc008/ckcstudent/pull/5))
 - [x] integrate crashlytics ([#1](https://github.com/baoloc008/ckcstudent/pull/1))
-- [ ] theming
 - [ ] force update
 - [x] add Firebase App Distribution ([#3](https://github.com/baoloc008/ckcstudent/pull/3))
-- [ ] error, network placeholder view
+- [x] error placeholder view
 
 ## Bugs
 - [x] fix overflow text ([#4](https://github.com/baoloc008/ckcstudent/pull/4))
